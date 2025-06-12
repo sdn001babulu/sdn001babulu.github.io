@@ -3,151 +3,189 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>e-Rapor</title>
+  <link rel="icon" type="image/x-icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbHxJ2n1eKUV_RJtEBO1EEEpi5DCv0dHcYDqIH94kYjBYSJ6kMx0Hn7YoFJqcvm53HKuQBXw4MmvZrS33W_SO2hEQCpMKSxe9_1WgI37ibfaramvi-EF6P_Xz04voU7zURu-QH8y4HWANvGiSpRRT08SrOwzy19PxReslP87hVkJIDrPc9leLI-u9Narw/w320-h320/raport-icon.png"/>
+  <title>eRaport</title>
   <style>
     * {
       box-sizing: border-box;
     }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
     body {
-      font-family: sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f0f2f5;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
+
     header {
+      background-color: #2c3e50;
+      color: white;
       text-align: center;
-      padding: 20px 10px 10px;
+      padding: 0.8rem 0;
     }
-    header img {
-      width: 80px;
-      height: 80px;
+
+    header h1 {
+      margin: 0.2rem 0;
+      font-size: 1.5rem;
     }
-    h1 {
+
+    header p {
+      margin: 0.2rem 0;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
       text-align: center;
-      margin: 10px 0 30px;
+      padding: 0.5rem 0;
+      margin-top: auto;
     }
-    main {
-      flex: 1;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 20px;
-      margin-top: 25px; 
-    }
+
     .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    .card-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      gap: 1rem;
+      justify-content: space-between;
     }
-    .teacher-card {
+
+    .card {
+      flex: 1 1 calc(25% - 1rem);
+      background-color: #fff;
       border-radius: 10px;
-      width: 200px;
+      padding: 1rem;
       text-align: center;
-      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      min-width: 220px;
     }
-    .teacher-card img {
-      width: 100%;
-      height: auto;
-      max-height: 200px;
-      object-fit: contain;
-      border-radius: 10px;
+
+    .card:hover {
+      transform: translateY(-5px);
     }
-    .teacher-name {
-      font-weight: bold;
-      margin: 10px 0;
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
     }
-    .login-btn {
-      display: inline-block;
-      padding: 8px 10px;
-      text-decoration: none;
-      background: #007bff;
+
+    .card h3 {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .card button {
+      margin-top: 1rem;
+      background-color: #3498db;
       color: white;
+      border: none;
+      padding: 0.5rem 1rem;
       border-radius: 5px;
-      transition: background 0.3s;
-    }
-    .login-btn:hover {
-      background: #0056b3;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #002147;
-      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
-    /* Responsiveness */
+    .card button:hover {
+      background-color: #2980b9;
+    }
+
+    .login-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 10px;
+    background-color: #46a0ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .login-btn:hover {
+    background-color: #ffad00;
+  }
+
+    @media (max-width: 900px) {
+      .card {
+        flex: 1 1 calc(50% - 1rem);
+      }
+    }
+
     @media (max-width: 600px) {
-      .teacher-card {
-        width: 100%;
-        max-width: 300px;
-      }
-
-      main {
-        padding: 10px;
-        margin-top: -30px;
-        margin-bottom: 20px;
-      }
-
-      h1 {
-        font-size: 20px;
-        margin: 10px 0 20px;
-      }
-
-      header img {
-        width: 60px;
-        height: 60px;
+      .card {
+        flex: 1 1 100%;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://static.vecteezy.com/system/resources/previews/021/950/979/original/3d-file-report-icon-illustration-png.png" alt="Logo Sekolah">
-    <h1>e-Rapor SD Negeri 001 Babulu</h1>
+    <h1>E-RAPORT SYSTEM</h1>
+    <p>Log in to your account</p>
   </header>
-  <main>
-    <div class="container">
-      <!-- Guru 1 -->
-      <div class="teacher-card">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_ITkmaXSMc_NlvAJtjyFnO9akcxSQX-6dMk3TIGF5uHhJMFeYnFbwKY7BWVm_e7sXPgrXy-QmY_mgrCTikZZuzg4RV5i3A4rjXJH9YyRDUI1n_SBaCqxSLkO5r_na23mWEkbwkT7L2MsSYjhewueN_fehSXN0Hrh9rF1fZr-JwuEpBWsPMkJVzHMtt0c/w224-h312/rona.JPG" alt="Guru 1">
-        <div class="teacher-name">Rona Rotuwati, S.Pd</div>
-        <a class="login-btn" href="https://sdn001babulu.github.io/grade1a.html">Login</a>
-      </div>
-      <!-- Guru 2 -->
-      <div class="teacher-card">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEin6rF4Of5rrf1lbH37bfIjUlxC7yThEl1kWQPYeZX52CLI3FLuTM4zQFL1o4QXffzDN9yTgI20KRaFb0OgX1MnDEZvmKHFdDsExQK4X4u8ioVORMotfNNe4EsNukMBHnC_cFt9a9wkk4bZt5T2i3FncnDQYrp7CpJA6C4IUjzw85DfNQ4f-B1MB-Lqd5M/w153-h200/jum1.jpg" alt="Guru 1">
-        <div class="teacher-name">Jumiatin, S.Pd</div>
-        <a class="login-btn" href="https://sdn001babulu.github.io/grade2b.html">Login</a>
-      </div>
 
-      <!-- Guru 3 -->
-      <div class="teacher-card">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEglq1W4O3rzTc6ZopUgDdXXZh0BlKbvD3PpB55vGNnm5G3OJsV2fyQ1hapZFc4YeTf2oskQgzUOoZLxf-AdtJwEhUF-3bAqwD9mE1XHXvdKwFUn6_KzDZe4zX1DISnE3Qi8elISbqa8coYiLLTUOiOJ3xpnQlYRvJZlLhQmWThvPMp2kudLw5D6CFZzBx8/w153-h200/kasmawati.PNG" alt="Guru 2">
-        <div class="teacher-name">Kasmawati, S.Pd</div>
-         <a class="login-btn" href="https://sdn001babulu.github.io/grade4b.html">Login</a>
+  <div class="container">
+    <div class="card-container">
+      <div class="card">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbHxJ2n1eKUV_RJtEBO1EEEpi5DCv0dHcYDqIH94kYjBYSJ6kMx0Hn7YoFJqcvm53HKuQBXw4MmvZrS33W_SO2hEQCpMKSxe9_1WgI37ibfaramvi-EF6P_Xz04voU7zURu-QH8y4HWANvGiSpRRT08SrOwzy19PxReslP87hVkJIDrPc9leLI-u9Narw/w320-h320/raport-icon.png" alt="User 1">
+        <h3>Rona Rotuwati, S.Pd</h3>
+        <a href="https://sdn001babulu.github.io/grade1a.html" class="login-btn">Login</a>
       </div>
-
-      <!-- Guru 4 -->
-      <div class="teacher-card">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtvnw3T4V5XimdE_YPDfMo9Tz_ORO5xc3-1xF97zR1YqklfzYeRzyl9OmcP06UYxFLkSngrTk4nY-DSqF1af8UtsIxXx-ADIKGkmA34F0USV8JiAyqIWitO0cXRRIklReZ_cEaLx4f1-n_v6TzmVS_fyvrX7U3kpslHyz4ifi5aTWkh52o73SXIFTMkG8/w159-h200/lisnah.PNG" alt="Guru 3">
-        <div class="teacher-name">Lisnah, S.Pd</div>
-        <a class="login-btn" href="https://sdn001babulu.github.io/grade5b.html">Login</a>
+      <div class="card">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbHxJ2n1eKUV_RJtEBO1EEEpi5DCv0dHcYDqIH94kYjBYSJ6kMx0Hn7YoFJqcvm53HKuQBXw4MmvZrS33W_SO2hEQCpMKSxe9_1WgI37ibfaramvi-EF6P_Xz04voU7zURu-QH8y4HWANvGiSpRRT08SrOwzy19PxReslP87hVkJIDrPc9leLI-u9Narw/w320-h320/raport-icon.png" alt="User 2">
+        <h3>Yuliati, S.Pd</h3>
+        <a href="https://example.com" class="login-btn">Login</a>
       </div>
-
-       <!-- Guru 5 -->
-      <div class="teacher-card">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgePnNsoeyU_y6oe0IEARZZgSgi1NXWe9GyVcuELZmu1aP57O49E69nAu4Vdgn6IRMygXrxMuk7kd786eqmpD5Q89uq-OMWcgxhAYRF2Lre2-FkTf3Ojmic8-6Y_w9gC8cnXJ7pmDbYziWwt6S5LzD45e5Fdjfj_LJCBKOsw7rqfgUq30zWM_4jQetBIqA/w172-h258/10.jpeg" alt="Guru 3">
-        <div class="teacher-name">Sukmawati, S.Pd</div>
-        <a class="login-btn" href="https://sdn001babulu.github.io/grade6a.html">Login</a>
+      <div class="card">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbHxJ2n1eKUV_RJtEBO1EEEpi5DCv0dHcYDqIH94kYjBYSJ6kMx0Hn7YoFJqcvm53HKuQBXw4MmvZrS33W_SO2hEQCpMKSxe9_1WgI37ibfaramvi-EF6P_Xz04voU7zURu-QH8y4HWANvGiSpRRT08SrOwzy19PxReslP87hVkJIDrPc9leLI-u9Narw/w320-h320/raport-icon.png" alt="User 3">
+        <h3>Trisnawati, S.Pd</h3>
+        <a href="https://example.com" class="login-btn">Login</a>
+      </div>
+      <div class="card">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbHxJ2n1eKUV_RJtEBO1EEEpi5DCv0dHcYDqIH94kYjBYSJ6kMx0Hn7YoFJqcvm53HKuQBXw4MmvZrS33W_SO2hEQCpMKSxe9_1WgI37ibfaramvi-EF6P_Xz04voU7zURu-QH8y4HWANvGiSpRRT08SrOwzy19PxReslP87hVkJIDrPc9leLI-u9Narw/w320-h320/raport-icon.png" alt="User 4">
+        <h3>Jumiatin, S.Pd</h3>
+        <a href="https://sdn001babulu.github.io/grade2b.html" class="login-btn">Login</a>
+      </div>
+      <div class="card">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbHxJ2n1eKUV_RJtEBO1EEEpi5DCv0dHcYDqIH94kYjBYSJ6kMx0Hn7YoFJqcvm53HKuQBXw4MmvZrS33W_SO2hEQCpMKSxe9_1WgI37ibfaramvi-EF6P_Xz04voU7zURu-QH8y4HWANvGiSpRRT08SrOwzy19PxReslP87hVkJIDrPc9leLI-u9Narw/w320-h320/raport-icon.png" alt="User 1">
+        <h3>Dewi Susilawati, S.Pd</h3>
+        <a href="https://example.com" class="login-btn">Login</a>
+      </div>
+      <div class="card">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbHxJ2n1eKUV_RJtEBO1EEEpi5DCv0dHcYDqIH94kYjBYSJ6kMx0Hn7YoFJqcvm53HKuQBXw4MmvZrS33W_SO2hEQCpMKSxe9_1WgI37ibfaramvi-EF6P_Xz04voU7zURu-QH8y4HWANvGiSpRRT08SrOwzy19PxReslP87hVkJIDrPc9leLI-u9Narw/w320-h320/raport-icon.png" alt="User 2">
+        <h3>Kasmawati, S.Pd</h3>
+        <a href="https://sdn001babulu.github.io/grade4b.html" class="login-btn">Login</a>
+      </div>
+      <div class="card">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbHxJ2n1eKUV_RJtEBO1EEEpi5DCv0dHcYDqIH94kYjBYSJ6kMx0Hn7YoFJqcvm53HKuQBXw4MmvZrS33W_SO2hEQCpMKSxe9_1WgI37ibfaramvi-EF6P_Xz04voU7zURu-QH8y4HWANvGiSpRRT08SrOwzy19PxReslP87hVkJIDrPc9leLI-u9Narw/w320-h320/raport-icon.png" alt="User 3">
+        <h3>Lisnah, S.Pd</h3>
+        <a href="https://sdn001babulu.github.io/grade5b.html" class="login-btn">Login</a>
+      </div>
+      <div class="card">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbHxJ2n1eKUV_RJtEBO1EEEpi5DCv0dHcYDqIH94kYjBYSJ6kMx0Hn7YoFJqcvm53HKuQBXw4MmvZrS33W_SO2hEQCpMKSxe9_1WgI37ibfaramvi-EF6P_Xz04voU7zURu-QH8y4HWANvGiSpRRT08SrOwzy19PxReslP87hVkJIDrPc9leLI-u9Narw/w320-h320/raport-icon.png" alt="User 4">
+        <h3>Sukmawati, S.Pd</h3>
+        <a href="https://sdn001babulu.github.io/grade6a.html" class="login-btn">Login</a>
       </div>
     </div>
-  </main>
+  </div>
   <footer>
-    &copy; 2025 SD Negeri 001 Babulu | Sistem e-Rapor
+    <p>&copy; 2025 SD Negeri 001 Babulu. All rights reserved.</p>
   </footer>
 </body>
 </html>
