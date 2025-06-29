@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>020 Gradefy System</title>
+  <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/education-2-26/380/School-1024.png" type="image/x-icon">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.2rem;
+      color: #666;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <div class="iframe-container">
+    <div class="loader" id="loader">Loading...</div>
+    <iframe 
+      src="https://script.google.com/macros/s/AKfycbxryGgsq5KRxttPwa3tWJdt0sTB8pS6ao1yhDEl-IbjdaS2Rlwp0jyBV6F_SutXXvkk/exec" 
+      title="JNC Edukasi"
+      onload="document.getElementById('loader').style.display='none';"
+      allowfullscreen>
+    </iframe>
+  </div>
+</body>
+</html>
